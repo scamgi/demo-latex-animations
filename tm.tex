@@ -1,0 +1,57 @@
+\documentclass[border=5pt]{standalone}
+\usepackage{tikz}
+\usepackage{amssymb}
+\usepackage{animate} % Pacchetto per le animazioni
+
+\usetikzlibrary{positioning, chains, shapes.geometric}
+
+% Comando per disegnare un singolo frame dell'animazione
+% #1: Contenuto del nastro (es. {a,b,a,\Box})
+% #2: Posizione della testina (es. tape-1)
+% #3: Stato corrente (es. q_0)
+\newcommand{\drawtape}[3]{
+    \begin{tikzpicture}[
+        tape_cell/.style={rectangle, draw, minimum size=1cm, font=\Large},
+        tape_head/.style={isosceles triangle, draw, shape border rotate=90, fill=red!30}
+    ]
+        \begin{scope}[start chain=tape going right, node distance=-0.5pt]
+            \foreach \content in #1 {
+                \node[on chain, tape_cell] {$\content$};
+            }
+        \end{scope}
+        
+        \node[above=0.5cm of #2] (head_label) {$#3$};
+        \node[tape_head, above=0.1cm of #2] (head_pointer) {};
+    \end{tikzpicture}
+}
+
+\begin{document}
+
+% Inizia l'ambiente di animazione
+% controls: aggiunge i pulsanti play/pausa
+% loop: ripete l'animazione
+% 1: frame rate (1 frame al secondo)
+\begin{animateinline}[controls,loop]{1}
+    
+    % Frame 0: Stato iniziale
+    \drawtape{{a, b, a, \Box, \Box}}{tape-1}{q_0}
+    \newframe
+
+    % Frame 1: Legge 'a', scrive 'b', sposta a destra
+    \drawtape{{b, b, a, \Box, \Box}}{tape-2}{q_0}
+    \newframe
+
+    % Frame 2: Legge 'b', scrive 'a', sposta a destra
+    \drawtape{{b, a, a, \Box, \Box}}{tape-3}{q_0}
+    \newframe
+
+    % Frame 3: Legge 'a', scrive 'b', sposta a destra
+    \drawtape{{b, a, b, \Box, \Box}}{tape-4}{q_0}
+    \newframe
+
+    % Frame 4: Legge 'Box', si ferma, va allo stato finale
+    \drawtape{{b, a, b, \Box, \Box}}{tape-4}{q_f}
+
+\end{animateinline}
+
+\end{document}
