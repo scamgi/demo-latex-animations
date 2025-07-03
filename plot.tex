@@ -1,0 +1,16 @@
+\documentclass{article}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+\begin{document}
+
+\begin{tikzpicture}
+  \begin{axis}
+    \addplot3[
+      surf,
+    ]
+    {x^2 - y^2};
+  \end{axis}
+\end{tikzpicture}
+
+\end{document}
