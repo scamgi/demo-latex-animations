@@ -1,0 +1,28 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "latexmk: watch",
+      "type": "shell",
+      "command": "latexmk",
+      "args": [
+        "-pvc",
+        "-pdf",
+        "-interaction=nonstopmode",
+        // Replace with the name of your main .tex file
+        "your_main_file.tex" 
+      ],
+      "isBackground": true,
+      "problemMatcher": ["$latex-pvc"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      }
+    }
+  ]
+}
