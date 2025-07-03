@@ -5,7 +5,7 @@
 LATEX_COMPILER = pdflatex
 
 # Define the main source file
-SRC_FILE = main.tex
+SRC_FILE = beamer.tex
 
 # Define the output directory for generated files
 OUTPUT_DIR = out

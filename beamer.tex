@@ -1,0 +1,45 @@
+\documentclass{beamer}
+
+\title{My Awesome Presentation}
+\author{Your Name}
+\date{\today}
+
+\usetheme{Boadilla}
+\usecolortheme{seagull}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\section{Introduction}
+
+\begin{frame}{First Slide}
+  \frametitle{This is the frame title}
+  This is the content of the first slide.
+\end{frame}
+
+\section{Main Content}
+
+\begin{frame}{Second Slide}
+  \begin{itemize}
+    \item A bullet point.
+    \item Another bullet point.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Overlays}
+  \begin{itemize}
+    \item<1-> This appears on the first slide and all subsequent slides.
+    \item<2-> This appears on the second slide and all subsequent slides.
+    \item<3-> This appears only on the third slide.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{A Slide with Notes}
+  This is what the audience sees.
+\end{frame}
+\note{This is a speaker note.}
+
+\end{document}
