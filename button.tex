@@ -1,0 +1,22 @@
+\documentclass{article}
+\usepackage{ocg-p}
+\usepackage{xcolor}
+
+\begin{document}
+
+\section*{Question 1}
+What is the capital of Italy?
+
+\begin{center}
+  % This creates a button to toggle the visibility of the 'solution1' layer
+  \toggleocgs{solution1}{\fbox{Show/Hide Solution}}
+\end{center}
+
+% This places the solution on a layer named 'solution1', initially hidden
+\begin{ocg}{Solution 1}{solution1}{0}
+  \begin{center}
+    \textcolor{blue}{The capital of Italy is Rome.}
+  \end{center}
+\end{ocg}
+
+\end{document}
