@@ -1,0 +1,42 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage{chessboard}
+
+\title{Partita di Scacchi in LaTeX}
+\author{Il tuo Nome}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Posizione Personalizzata}
+
+Per mostrare una posizione specifica, puoi usare il comando \verb|\fenboard{<codice_FEN>}|. Il codice FEN descrive la posizione dei pezzi, di chi è il tratto, le possibilità di arrocco, ecc.
+
+\bigskip
+
+\begin{center}
+  % Esempio: Posizione dopo 1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4
+  \fenboard{rnbqkb1r/pp2pp1p/3p1np1/8/3NP3/8/PPP2PPP/RNBQKB1R w KQkq - 0 5}
+\end{center}
+
+\bigskip
+
+Puoi anche aggiungere delle mosse sulla scacchiera.
+
+\begin{center}
+    % Stessa posizione, ma con le frecce per mostrare le mosse
+    \chessboard[
+      setfen=rnbqkb1r/pp2pp1p/3p1np1/8/3NP3/8/PPP2PPP/RNBQKB1R w KQkq - 0 5,
+      showmoves,
+      moveid=5w,
+      pgfstyle=color,
+      color=blue,
+      arrow=g1-f3,
+      markfields={d4,f6}
+    ]
+\end{center}
+
+\end{document}
